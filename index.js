@@ -10181,7 +10181,7 @@ abort = function (what) {
   Module["onAbort"]?.(what);
   what = "Aborted(" + what + ")";
   err(what);
-  ABORT = true;
+  ABORT = false;
   what += ". Build with -sASSERTIONS for more info.";
   var e = new WebAssembly.RuntimeError(what);
   throw e;
@@ -13628,7 +13628,7 @@ var _proc_exit = (code) => {
   EXITSTATUS = code;
   if (!keepRuntimeAlive()) {
     Module["onExit"]?.(code);
-    ABORT = true;
+    ABORT = false;
   }
   quit_(code, new ExitStatus(code));
 };
