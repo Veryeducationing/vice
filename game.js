@@ -345,6 +345,8 @@ function showWasted() {
     wastedContainer.hidden = false;
 }
 
+window.addEventListener('DOMContentLoaded', startGame);
+
 const revc_iniDefault = `
 [VideoMode]
 Width=800
